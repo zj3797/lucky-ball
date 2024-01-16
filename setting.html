@@ -121,7 +121,7 @@
         >重置中奖结果
         </el-button
         >
-        <a href="./index.html">去抽奖</a>
+        <el-button size="small" type="info" @click="location.href='./index.html'">去抽奖</el-button>
     </div>
     <div class="members">
         <h1>参与人员列表(共{{memberSource.length}}人)</h1>
@@ -283,8 +283,8 @@
             onAddMember: function () {
                 let values = this.usernames.split("\n")
                 for (let i = 0; i < values.length; i++) {
-                    let username=values[i]
-                    if (username.length>0){
+                    let username = values[i]
+                    if (username.length > 0) {
                         this.memberSource.push({
                             name: username,
                             editing: {},
@@ -292,7 +292,7 @@
                     }
                 }
                 this.saveData()
-                this.usernames=''
+                this.usernames = ''
             },
             onRemoveMember: function (row, index) {
                 var vm = this;
